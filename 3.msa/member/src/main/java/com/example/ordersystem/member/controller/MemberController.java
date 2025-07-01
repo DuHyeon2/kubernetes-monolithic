@@ -35,6 +35,12 @@ public class MemberController {
         this.redisTemplate = redisTemplate;
     }
 
+
+    @GetMapping("/health-check")
+    public ResponseEntity<String> healthCheck() {
+        return new ResponseEntity<>("Member Service is running", HttpStatus.OK);
+    }
+
     @PostMapping("/create")
     public ResponseEntity<?> memberCreate(@RequestBody MemberSaveReqDto memberSaveReqDto){
         Long memberId = memberService.save(memberSaveReqDto);

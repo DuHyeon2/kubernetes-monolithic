@@ -21,6 +21,7 @@ public class JwtAuthFilter implements GlobalFilter {
             "/member/create",
             "/member/doLogin",
             "/member/refresh-token",
+            "/member/health-check",
             "/product/list"
     );
 
